@@ -1,0 +1,187 @@
+/* ==========================================
+   KrishiMitra AI - Government Schemes
+========================================== */
+
+body{
+    background:#f5f7fa;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#333;
+}
+
+/* ==========================================
+   Navbar
+========================================== */
+
+.navbar{
+    padding:14px 0;
+}
+
+.navbar-brand{
+    font-size:24px;
+    font-weight:bold;
+}
+
+/* ==========================================
+   Hero Section
+========================================== */
+
+.hero{
+    background:linear-gradient(135deg,#198754,#28a745);
+    color:white;
+    padding:70px 20px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:42px;
+    font-weight:700;
+}
+
+.hero p{
+    font-size:18px;
+    margin-top:10px;
+    opacity:0.95;
+}
+
+/* ==========================================
+   Search Card
+========================================== */
+
+.card{
+    border:none;
+    border-radius:18px;
+}
+
+.card-body{
+    padding:35px;
+}
+
+.form-label{
+    font-weight:600;
+    margin-bottom:8px;
+}
+
+.form-select{
+    height:50px;
+    border-radius:10px;
+}
+
+.form-select:focus{
+    border-color:#198754;
+    box-shadow:0 0 8px rgba(25,135,84,.25);
+}
+
+/* ==========================================
+   Buttons
+========================================== */
+
+.btn-success{
+    border-radius:12px;
+    padding:12px 35px;
+    font-size:18px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-success:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 20px rgba(25,135,84,.3);
+}
+
+/* ==========================================
+   Loading
+========================================== */
+
+#loading{
+    padding:40px;
+}
+
+.spinner-border{
+    width:3rem;
+    height:3rem;
+}
+
+/* ==========================================
+   Scheme Cards
+========================================== */
+
+.scheme-card{
+    background:#fff;
+    border-radius:18px;
+    padding:25px;
+    margin-bottom:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.scheme-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 30px rgba(0,0,0,.12);
+}
+
+.scheme-title{
+    color:#198754;
+    font-size:24px;
+    font-weight:700;
+    margin-bottom:15px;
+}
+
+.scheme-card p{
+    margin-bottom:10px;
+    line-height:1.6;
+}
+
+.scheme-card strong{
+    color:#000;
+}
+
+/* ==========================================
+   AI Advice
+========================================== */
+
+#aiAdvice{
+    font-size:16px;
+    line-height:1.8;
+    color:#444;
+    white-space:pre-line;
+}
+
+/* ==========================================
+   Alerts
+========================================== */
+
+.alert{
+    border-radius:15px;
+}
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media(max-width:768px){
+
+.hero{
+    padding:50px 15px;
+}
+
+.hero h1{
+    font-size:30px;
+}
+
+.hero p{
+    font-size:16px;
+}
+
+.card-body{
+    padding:20px;
+}
+
+.scheme-title{
+    font-size:20px;
+}
+
+.btn-success{
+    width:100%;
+}
+
+}

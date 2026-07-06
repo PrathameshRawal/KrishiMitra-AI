@@ -1,0 +1,207 @@
+/* ==========================================
+   KrishiMitra AI - Market Prices
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f4f7f9;
+    overflow-x:hidden;
+}
+
+/* Sidebar */
+
+.sidebar{
+    background:#198754;
+    min-height:100vh;
+    position:sticky;
+    top:0;
+    padding-top:30px;
+}
+
+.logo{
+    color:#fff;
+    text-align:center;
+    font-weight:700;
+    margin-bottom:40px;
+}
+
+.sidebar a{
+    display:block;
+    color:#fff;
+    text-decoration:none;
+    padding:15px 25px;
+    transition:.3s;
+    font-size:15px;
+}
+
+.sidebar a i{
+    width:28px;
+}
+
+.sidebar a:hover,
+.sidebar .active{
+    background:rgba(255,255,255,.15);
+    border-left:5px solid #fff;
+}
+
+/* Main */
+
+.main-content{
+    padding:40px;
+}
+
+.page-header h2{
+    color:#198754;
+    font-weight:700;
+}
+
+.page-header p{
+    color:#666;
+}
+
+/* Cards */
+
+.search-card,
+.table-card,
+.card{
+    border:none;
+    border-radius:18px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    animation:fadeUp .5s ease;
+}
+
+.card-body{
+    padding:30px;
+}
+
+/* Search */
+
+.form-control{
+    border-radius:12px;
+    padding:12px;
+}
+
+.form-control:focus{
+    border-color:#198754;
+    box-shadow:0 0 0 .2rem rgba(25,135,84,.2);
+}
+
+/* Button */
+
+.btn-success{
+    background:#198754;
+    border:none;
+    border-radius:12px;
+    padding:12px;
+    font-weight:600;
+}
+
+.btn-success:hover{
+    background:#157347;
+}
+
+/* Table */
+
+.table{
+    margin-bottom:0;
+}
+
+.table thead th{
+    text-align:center;
+    vertical-align:middle;
+    font-weight:600;
+}
+
+.table tbody td{
+    text-align:center;
+    vertical-align:middle;
+}
+
+.table-hover tbody tr:hover{
+    background:#f1fff6;
+}
+
+/* Advice */
+
+#advice{
+    border-radius:15px;
+    line-height:1.8;
+    white-space:pre-line;
+}
+
+/* Loading */
+
+.loading{
+    text-align:center;
+    padding:40px;
+}
+
+.spinner-border{
+    width:3rem;
+    height:3rem;
+}
+
+/* Animation */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* Responsive */
+
+@media(max-width:992px){
+
+    .sidebar{
+        position:relative;
+        min-height:auto;
+    }
+
+    .main-content{
+        padding:20px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .card-body{
+        padding:20px;
+    }
+
+    .page-header{
+        text-align:center;
+    }
+
+    .btn-success{
+        margin-top:10px;
+    }
+
+}
+
+@media(max-width:576px){
+
+    .main-content{
+        padding:15px;
+    }
+
+    .table{
+        font-size:14px;
+    }
+
+}

@@ -1,0 +1,8 @@
+### Test KrishiMitra AI Chat API
+
+POST http://127.0.0.1:5000/api/chat
+Content-Type: application/json
+
+{
+    "message": "How to increase wheat production?"
+}

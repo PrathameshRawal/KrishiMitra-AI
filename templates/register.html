@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Register | KrishiMitra AI</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}">
+
+</head>
+
+<body>
+
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-10">
+
+            <div class="login-card">
+
+                <div class="text-center mb-4">
+
+                    <h2 class="text-success">
+                        🌱 Farmer Registration
+                    </h2>
+
+                    <p class="text-muted">
+                        Create your KrishiMitra AI account
+                    </p>
+
+                </div>
+
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                {% for category, message in messages %}
+
+                <div class="alert alert-{{ category }}">
+                    {{ message }}
+                </div>
+
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+
+                <form method="POST">
+
+                    <div class="row">
+
+                        <div class="col-md-6 mb-3">
+
+                            <label>Full Name</label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="full_name"
+                                required>
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            <label>Mobile Number</label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="mobile"
+                                required>
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            <label>Email</label>
+
+                            <input
+                                type="email"
+                                class="form-control"
+                                name="email"
+                                required>
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            <label>Password</label>
+
+                            <input
+                                type="password"
+                                class="form-control"
+                                name="password"
+                                required>
+
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+
+                            <label>State</label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="state"
+                                required>
+
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+
+                            <label>District</label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="district"
+                                required>
+
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+
+                            <label>Village</label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="village"
+                                required>
+
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+
+                            <label>Land Size (Acres)</label>
+
+                            <input
+                                type="number"
+                                step="0.1"
+                                class="form-control"
+                                name="land_size"
+                                required>
+
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+
+                            <label>Soil Type</label>
+
+                            <select
+                                class="form-select"
+                                name="soil_type"
+                                required>
+
+                                <option value="">Select</option>
+                                <option>Black</option>
+                                <option>Red</option>
+                                <option>Alluvial</option>
+                                <option>Clay</option>
+                                <option>Sandy</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+
+                            <label>Primary Crop</label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="primary_crop"
+                                placeholder="e.g. Sugarcane">
+
+                        </div>
+
+                        <div class="col-md-6 mb-4">
+
+                            <label>Preferred Language</label>
+
+                            <select
+                                class="form-select"
+                                name="language">
+
+                                <option>English</option>
+                                <option>Hindi</option>
+                                <option>Marathi</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                    <button
+                        class="btn btn-success w-100">
+
+                        <i class="fa-solid fa-user-plus"></i>
+
+                        Create Account
+
+                    </button>
+
+                </form>
+
+                <hr>
+
+                <p class="text-center">
+
+                    Already have an account?
+
+                    <a href="{{ url_for('auth.login') }}">
+                        Login
+                    </a>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

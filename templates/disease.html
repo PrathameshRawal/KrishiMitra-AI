@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Disease Detection | KrishiMitra AI</title>
+
+    <!-- Bootstrap -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+
+    <!-- Google Font -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/disease.css') }}">
+
+</head>
+
+<body>
+
+<div class="container-fluid">
+
+    <div class="row">
+
+        <!-- Sidebar -->
+
+        <div class="col-lg-2 sidebar">
+
+            <h3 class="logo">
+                🌱 KrishiMitra AI
+            </h3>
+
+            <a href="/dashboard">
+                <i class="fa-solid fa-house"></i>
+                Dashboard
+            </a>
+
+            <a href="/chatbot">
+                <i class="fa-solid fa-robot"></i>
+                AI Assistant
+            </a>
+
+            <a href="/weather">
+                <i class="fa-solid fa-cloud-sun"></i>
+                Weather
+            </a>
+
+            <a href="/recommendation">
+                <i class="fa-solid fa-seedling"></i>
+                Crop Recommendation
+            </a>
+
+            <a href="/disease" class="active">
+                <i class="fa-solid fa-leaf"></i>
+                Disease Detection
+            </a>
+
+            <a href="/logout">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </a>
+
+        </div>
+
+        <!-- Main -->
+
+        <div class="col-lg-10 main-content">
+
+            <div class="page-header">
+
+                <h2>
+                    🌿 AI Crop Disease Detection
+                </h2>
+
+                <p>
+                    Upload a crop or leaf image and let AI identify diseases with treatment recommendations.
+                </p>
+
+            </div>
+
+            <div class="row mt-4">
+
+                <!-- Upload Card -->
+
+                <div class="col-lg-5">
+
+                    <div class="card upload-card">
+
+                        <div class="card-body">
+
+                            <h4 class="mb-4">
+                                Upload Crop Image
+                            </h4>
+
+                            <form id="diseaseForm"
+                                  enctype="multipart/form-data">
+
+                                <div class="upload-box">
+
+                                    <img
+                                        id="preview"
+                                        src="{{ url_for('static', filename='images/upload-placeholder.png') }}"
+                                        alt="Preview">
+
+                                    <input
+                                        type="file"
+                                        id="imageInput"
+                                        accept="image/*"
+                                        hidden>
+
+                                    <button
+                                        type="button"
+                                        id="chooseImage"
+                                        class="btn btn-success mt-3">
+
+                                        <i class="fa-solid fa-image"></i>
+
+                                        Choose Image
+
+                                    </button>
+
+                                </div>
+
+                                <button
+                                    type="submit"
+                                    class="btn btn-primary w-100 mt-4">
+
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                                    Analyze Disease
+
+                                </button>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Result Card -->
+
+                <div class="col-lg-7">
+
+                    <div class="card result-card">
+
+                        <div class="card-body">
+
+                            <h4 class="mb-4">
+
+                                AI Diagnosis Report
+
+                            </h4>
+
+                            <div id="loading"
+                                 class="text-center d-none">
+
+                                <div class="spinner-border text-success">
+
+                                </div>
+
+                                <p class="mt-3">
+
+                                    AI is analyzing your crop...
+
+                                </p>
+
+                            </div>
+
+                            <div id="result">
+
+                                <div class="alert alert-info">
+
+                                    Upload an image to receive:
+
+                                    <hr>
+
+                                    ✅ Disease Name
+
+                                    <br>
+
+                                    ✅ Confidence
+
+                                    <br>
+
+                                    ✅ Cause
+
+                                    <br>
+
+                                    ✅ Organic Treatment
+
+                                    <br>
+
+                                    ✅ Chemical Treatment
+
+                                    <br>
+
+                                    ✅ Prevention Tips
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/disease.js') }}"></script>
+
+</body>
+
+</html>

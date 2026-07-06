@@ -1,0 +1,319 @@
+/* ==========================================
+   KrishiMitra AI - Disease Detection
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f4f7f9;
+    overflow-x:hidden;
+}
+
+/* =============================
+   Sidebar
+============================= */
+
+.sidebar{
+
+    background:#198754;
+
+    min-height:100vh;
+
+    padding-top:30px;
+
+    position:sticky;
+
+    top:0;
+
+}
+
+.logo{
+
+    color:white;
+
+    text-align:center;
+
+    font-weight:700;
+
+    margin-bottom:40px;
+
+}
+
+.sidebar a{
+
+    display:block;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:15px 25px;
+
+    transition:.3s;
+
+    font-size:15px;
+
+}
+
+.sidebar a i{
+
+    width:30px;
+
+}
+
+.sidebar a:hover,
+
+.sidebar .active{
+
+    background:rgba(255,255,255,.15);
+
+    border-left:5px solid white;
+
+}
+
+/* =============================
+   Main
+============================= */
+
+.main-content{
+
+    padding:40px;
+
+}
+
+.page-header h2{
+
+    font-weight:700;
+
+    color:#198754;
+
+}
+
+.page-header p{
+
+    color:#666;
+
+}
+
+/* =============================
+   Cards
+============================= */
+
+.card{
+
+    border:none;
+
+    border-radius:18px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.upload-card{
+
+    min-height:550px;
+
+}
+
+.result-card{
+
+    min-height:550px;
+
+}
+
+/* =============================
+   Upload Box
+============================= */
+
+.upload-box{
+
+    border:2px dashed #198754;
+
+    border-radius:15px;
+
+    padding:25px;
+
+    text-align:center;
+
+    transition:.3s;
+
+}
+
+.upload-box:hover{
+
+    background:#f8fff9;
+
+}
+
+.upload-box img{
+
+    width:100%;
+
+    max-height:300px;
+
+    object-fit:contain;
+
+    border-radius:12px;
+
+}
+
+/* =============================
+   Buttons
+============================= */
+
+.btn{
+
+    border-radius:12px;
+
+    padding:12px;
+
+    font-weight:600;
+
+}
+
+.btn-success{
+
+    background:#198754;
+
+    border:none;
+
+}
+
+.btn-success:hover{
+
+    background:#157347;
+
+}
+
+.btn-primary{
+
+    background:#0d6efd;
+
+    border:none;
+
+}
+
+.btn-primary:hover{
+
+    background:#0b5ed7;
+
+}
+
+/* =============================
+   Result
+============================= */
+
+#result{
+
+    font-size:15px;
+
+    line-height:1.8;
+
+}
+
+#result h5{
+
+    color:#198754;
+
+    margin-top:15px;
+
+    font-weight:700;
+
+}
+
+.result-item{
+
+    margin-bottom:20px;
+
+    padding:15px;
+
+    background:#f8f9fa;
+
+    border-left:5px solid #198754;
+
+    border-radius:10px;
+
+}
+
+/* =============================
+   Loading
+============================= */
+
+#loading{
+
+    padding:70px 0;
+
+}
+
+.spinner-border{
+
+    width:4rem;
+
+    height:4rem;
+
+}
+
+/* =============================
+   Responsive
+============================= */
+
+@media(max-width:992px){
+
+.sidebar{
+
+min-height:auto;
+
+position:relative;
+
+}
+
+.main-content{
+
+padding:25px;
+
+}
+
+.upload-card,
+
+.result-card{
+
+margin-bottom:25px;
+
+min-height:auto;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.page-header h2{
+
+font-size:28px;
+
+}
+
+.upload-box{
+
+padding:15px;
+
+}
+
+.upload-box img{
+
+max-height:220px;
+
+}
+
+.main-content{
+
+padding:18px;
+
+}
+
+}

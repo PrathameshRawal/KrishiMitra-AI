@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Government Schemes | KrishiMitra AI</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/schemes.css') }}">
+
+</head>
+
+<body>
+
+<!-- Navbar -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-success shadow">
+
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="/dashboard">
+
+            🌾 KrishiMitra AI
+
+        </a>
+
+        <a href="/dashboard" class="btn btn-light">
+
+            ← Dashboard
+
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- Header -->
+
+<section class="hero">
+
+    <div class="container text-center">
+
+        <h1 class="display-5 fw-bold">
+
+            🇮🇳 Government Agriculture Schemes
+
+        </h1>
+
+        <p class="lead">
+
+            Find the best government schemes available for Indian farmers.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- Search -->
+
+<div class="container mt-5">
+
+    <div class="card shadow-lg border-0">
+
+        <div class="card-body p-4">
+
+            <div class="row g-3">
+
+                <div class="col-md-6">
+
+                    <label class="form-label">
+
+                        Select State
+
+                    </label>
+
+                    <select id="state" class="form-select">
+
+                        <option value="">Choose State</option>
+
+                        <option>Maharashtra</option>
+                        <option>Karnataka</option>
+                        <option>Gujarat</option>
+                        <option>Madhya Pradesh</option>
+                        <option>Rajasthan</option>
+                        <option>Uttar Pradesh</option>
+                        <option>Bihar</option>
+                        <option>Punjab</option>
+                        <option>Haryana</option>
+                        <option>Tamil Nadu</option>
+                        <option>Kerala</option>
+                        <option>Telangana</option>
+                        <option>Andhra Pradesh</option>
+
+                    </select>
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <label class="form-label">
+
+                        Farmer Category
+
+                    </label>
+
+                    <select id="category" class="form-select">
+
+                        <option value="">Choose Category</option>
+
+                        <option>Small Farmer</option>
+                        <option>Marginal Farmer</option>
+                        <option>Medium Farmer</option>
+                        <option>Large Farmer</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <div class="text-center mt-4">
+
+                <button id="searchBtn" class="btn btn-success btn-lg">
+
+                    🔍 Find Schemes
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Loading -->
+
+<div class="container mt-4">
+
+    <div id="loading" class="text-center d-none">
+
+        <div class="spinner-border text-success"></div>
+
+        <p class="mt-3">
+
+            Fetching Government Schemes...
+
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- Results -->
+
+<div class="container mt-5">
+
+    <div id="result">
+
+    </div>
+
+</div>
+
+
+<!-- AI Explanation -->
+
+<div class="container mt-5 mb-5">
+
+    <div class="card shadow border-0">
+
+        <div class="card-header bg-success text-white">
+
+            🤖 AI Explanation
+
+        </div>
+
+        <div class="card-body">
+
+            <div id="aiAdvice">
+
+                Search schemes to receive AI guidance.
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="{{ url_for('static', filename='js/schemes.js') }}"></script>
+
+</body>
+
+</html>

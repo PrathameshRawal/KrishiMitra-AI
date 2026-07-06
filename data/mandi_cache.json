@@ -1,0 +1,52 @@
+[
+    {
+        "crop": "Soyabean",
+        "state": "Maharashtra",
+        "district": "Kolhapur",
+        "market": "Kolhapur APMC",
+        "arrival_date": "05/07/2026",
+        "min_price": 6100,
+        "max_price": 6400,
+        "modal_price": 6250
+    },
+    {
+        "crop": "Soyabean",
+        "state": "Madhya Pradesh",
+        "district": "Indore",
+        "market": "Indore APMC",
+        "arrival_date": "05/07/2026",
+        "min_price": 6200,
+        "max_price": 6550,
+        "modal_price": 6400
+    },
+    {
+        "crop": "Tomato",
+        "state": "Maharashtra",
+        "district": "Pune",
+        "market": "Pune Market",
+        "arrival_date": "05/07/2026",
+        "min_price": 1200,
+        "max_price": 2200,
+        "modal_price": 1800
+    },
+    {
+        "crop": "Onion",
+        "state": "Maharashtra",
+        "district": "Nashik",
+        "market": "Lasalgaon",
+        "arrival_date": "05/07/2026",
+        "min_price": 1500,
+        "max_price": 2200,
+        "modal_price": 1850
+    },
+    {
+        "crop": "Cotton",
+        "state": "Maharashtra",
+        "district": "Akola",
+        "market": "Akola APMC",
+        "arrival_date": "05/07/2026",
+        "min_price": 6900,
+        "max_price": 7300,
+        "modal_price": 7100
+    }
+]

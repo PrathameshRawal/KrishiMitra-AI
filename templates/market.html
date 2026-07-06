@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Market Prices | KrishiMitra AI</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/market.css') }}">
+
+</head>
+
+<body>
+
+<div class="container-fluid">
+
+    <div class="row">
+
+        <!-- Sidebar -->
+
+        <div class="col-lg-2 sidebar">
+
+            <h3 class="logo">🌱 KrishiMitra AI</h3>
+
+            <a href="/dashboard">
+                <i class="fa-solid fa-house"></i>
+                Dashboard
+            </a>
+
+            <a href="/chatbot">
+                <i class="fa-solid fa-robot"></i>
+                AI Assistant
+            </a>
+
+            <a href="/weather">
+                <i class="fa-solid fa-cloud-sun"></i>
+                Weather
+            </a>
+
+            <a href="/disease">
+                <i class="fa-solid fa-leaf"></i>
+                Disease Detection
+            </a>
+
+            <a href="/recommendation">
+                <i class="fa-solid fa-seedling"></i>
+                Crop Recommendation
+            </a>
+
+            <a href="/market" class="active">
+                <i class="fa-solid fa-chart-line"></i>
+                Market Prices
+            </a>
+
+            <a href="/logout">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </a>
+
+        </div>
+
+        <!-- Main Content -->
+
+        <div class="col-lg-10 main-content">
+
+            <div class="page-header">
+
+                <h2>💹 Live Mandi Prices</h2>
+
+                <p>
+                    Search the latest mandi prices and get AI selling advice.
+                </p>
+
+            </div>
+
+            <!-- Search -->
+
+            <div class="card search-card mt-4">
+
+                <div class="card-body">
+
+                    <div class="row">
+
+                        <div class="col-md-10">
+
+                            <input
+                                type="text"
+                                id="crop"
+                                class="form-control"
+                                placeholder="Enter Crop Name (e.g. Soybean, Wheat, Cotton)">
+
+                        </div>
+
+                        <div class="col-md-2">
+
+                            <button
+                                id="searchBtn"
+                                class="btn btn-success w-100">
+
+                                <i class="fa-solid fa-magnifying-glass"></i>
+
+                                Search
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Market Table -->
+
+            <div class="card table-card mt-4">
+
+                <div class="card-body">
+
+                    <h4 class="mb-3">
+
+                        📊 Market Prices
+
+                    </h4>
+
+                    <div class="table-responsive">
+
+                        <table class="table table-bordered table-hover">
+
+                            <thead class="table-success">
+                                        <tr>
+
+                                                 <th>Crop</th>
+
+                                                 <th>State</th>
+
+                                                 <th>District</th>
+
+                                                 <th>Market</th>
+
+                                                 <th>Date</th>
+
+                                                 <th>Min Price</th>
+
+                                                 <th>Max Price</th>
+
+                                                 <th>Modal Price</th>
+
+                                        </tr>
+                            </thead>
+
+                         
+
+                            <tbody id="marketTable">
+
+                                <tr>
+
+                                    <td colspan="6" class="text-center">
+
+                                        Search a crop to view today's prices.
+
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- AI Advice -->
+
+            <div class="card mt-4">
+
+                <div class="card-body">
+
+                    <h4>
+
+                        🤖 AI Market Advice
+
+                    </h4>
+
+                    <div
+                        id="advice"
+                        class="alert alert-info mt-3">
+
+                        Search a crop to receive AI selling advice.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/market.js') }}"></script>
+
+</body>
+
+</html>

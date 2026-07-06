@@ -1,0 +1,279 @@
+/* ==========================================
+   KrishiMitra AI - Authentication Styles
+   ========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f4f9f4;
+    overflow-x:hidden;
+}
+
+/* ===========================
+   Left Panel
+=========================== */
+
+.left-panel{
+    background:linear-gradient(135deg,#0f9d58,#2ecc71);
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:60px;
+}
+
+.left-panel .content{
+    max-width:500px;
+}
+
+.left-panel h1{
+    font-size:48px;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.left-panel p{
+    font-size:18px;
+    opacity:.95;
+    line-height:1.8;
+}
+
+.left-panel img{
+    width:85%;
+    max-width:420px;
+    margin-top:40px;
+    animation:floatImage 4s ease-in-out infinite;
+}
+
+@keyframes floatImage{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-15px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+/* ===========================
+   Login Card
+=========================== */
+
+.login-card{
+
+    width:100%;
+    max-width:470px;
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:45px;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.08);
+
+    animation:fadeUp .7s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(35px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.login-card h2{
+
+    font-weight:700;
+
+    color:#0f9d58;
+
+}
+
+.login-card p{
+
+    color:#666;
+
+}
+
+label{
+
+    font-weight:600;
+
+    margin-bottom:8px;
+
+    display:block;
+
+}
+
+/* ===========================
+   Input
+=========================== */
+
+.form-control{
+
+    border-radius:12px;
+
+    border:1px solid #dcdcdc;
+
+    padding:13px 15px;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+.form-control:focus{
+
+    border-color:#0f9d58;
+
+    box-shadow:0 0 0 .2rem rgba(15,157,88,.15);
+
+}
+
+/* ===========================
+   Button
+=========================== */
+
+.btn-success{
+
+    background:#0f9d58;
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:14px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.btn-success:hover{
+
+    background:#0c7f48;
+
+    transform:translateY(-2px);
+
+}
+
+/* ===========================
+   Flash Messages
+=========================== */
+
+.alert{
+
+    border-radius:10px;
+
+    font-size:14px;
+
+}
+
+/* ===========================
+   Links
+=========================== */
+
+a{
+
+    color:#0f9d58;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+a:hover{
+
+    color:#0c7f48;
+
+}
+
+/* ===========================
+   Divider
+=========================== */
+
+hr{
+
+    margin:25px 0;
+
+}
+
+/* ===========================
+   Mobile
+=========================== */
+
+@media(max-width:992px){
+
+.left-panel{
+
+display:none;
+
+}
+
+.login-card{
+
+margin:30px 20px;
+
+padding:35px 25px;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.login-card{
+
+padding:30px 20px;
+
+}
+
+.login-card h2{
+
+font-size:28px;
+
+}
+
+.form-control{
+
+font-size:14px;
+
+}
+
+.btn-success{
+
+padding:12px;
+
+}
+
+}

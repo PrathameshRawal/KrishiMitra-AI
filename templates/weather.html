@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weather Intelligence | KrishiMitra AI</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/weather.css') }}">
+
+</head>
+
+<body>
+
+<div class="container-fluid">
+
+    <div class="row">
+
+        <!-- Sidebar -->
+
+        <div class="col-lg-2 sidebar">
+
+            <h3 class="logo">
+                🌱 KrishiMitra AI
+            </h3>
+
+            <a href="/dashboard">
+                <i class="fa-solid fa-house"></i>
+                Dashboard
+            </a>
+
+            <a href="/chatbot">
+                <i class="fa-solid fa-robot"></i>
+                AI Assistant
+            </a>
+
+            <a href="/weather" class="active">
+                <i class="fa-solid fa-cloud-sun"></i>
+                Weather
+            </a>
+
+            <a href="/disease">
+                <i class="fa-solid fa-leaf"></i>
+                Disease Detection
+            </a>
+
+            <a href="/recommendation">
+                <i class="fa-solid fa-seedling"></i>
+                Crop Recommendation
+            </a>
+
+            <a href="/logout">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </a>
+
+        </div>
+
+        <!-- Main Content -->
+
+        <div class="col-lg-10 main-content">
+
+            <div class="page-header">
+
+                <h2>
+                    🌦 Weather Intelligence
+                </h2>
+
+                <p>
+                    Get live weather updates and AI-powered farming recommendations.
+                </p>
+
+            </div>
+
+            <!-- Search -->
+
+            <div class="search-box mt-4">
+
+                <div class="input-group">
+
+                    <input
+                        type="text"
+                        id="city"
+                        class="form-control"
+                        placeholder="Enter city name (e.g. Pune)">
+
+                    <button
+                        class="btn btn-success"
+                        id="searchBtn">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        Search
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- Weather Card -->
+
+            <div class="card weather-card mt-4">
+
+               <div class="card weather-card mt-4">
+
+    <div class="card-body">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-4 text-center">
+
+                <h3 id="location">📍 --</h3>
+
+                <h1 id="temperature">--°C</h1>
+
+                <h5 id="condition">--</h5>
+
+            </div>
+
+            <div class="col-lg-8">
+
+                <div class="weather-grid">
+
+                    <div class="weather-item">
+                        <i class="fa-solid fa-droplet"></i>
+                        <span>Humidity</span>
+                        <h5 id="humidity">--%</h5>
+                    </div>
+
+                    <div class="weather-item">
+                        <i class="fa-solid fa-wind"></i>
+                        <span>Wind</span>
+                        <h5 id="wind">-- km/h</h5>
+                    </div>
+
+                    <div class="weather-item">
+                        <i class="fa-solid fa-temperature-half"></i>
+                        <span>Feels Like</span>
+                        <h5 id="feels">--°C</h5>
+                    </div>
+
+                    <div class="weather-item">
+                        <i class="fa-solid fa-cloud-rain"></i>
+                        <span>Rainfall</span>
+                        <h5 id="rain">--</h5>
+                    </div>
+
+                    <div class="weather-item">
+                        <i class="fa-solid fa-cloud-showers-heavy"></i>
+                        <span>Rain Chance</span>
+                        <h5 id="rainProbability">--</h5>
+                    </div>
+
+                    <div class="weather-item">
+                        <i class="fa-solid fa-eye"></i>
+                        <span>Visibility</span>
+                        <h5 id="visibility">--</h5>
+                    </div>
+
+                    <div class="weather-item">
+                        <i class="fa-solid fa-sun"></i>
+                        <span>Sunrise</span>
+                        <h5 id="sunrise">--</h5>
+                    </div>
+
+                    <div class="weather-item">
+                        <i class="fa-solid fa-moon"></i>
+                        <span>Sunset</span>
+                        <h5 id="sunset">--</h5>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+            </div>
+
+            <!-- AI Advice -->
+
+            <div class="card advice-card mt-4">
+
+                <div class="card-body">
+
+                    <h3>
+
+                        🤖 AI Farming Advice
+
+                    </h3>
+
+                    <div id="advice">
+
+                        <div class="alert alert-info mt-3">
+
+                            Search for weather to receive AI-powered farming recommendations.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/weather.js') }}"></script>
+
+</body>
+
+</html>

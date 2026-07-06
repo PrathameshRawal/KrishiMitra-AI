@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>KrishiMitra AI Dashboard</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+background:#f4f7fb;
+overflow-x:hidden;
+}
+
+/* Sidebar */
+
+.sidebar{
+position:fixed;
+left:0;
+top:0;
+width:260px;
+height:100vh;
+background:linear-gradient(180deg,#198754,#146c43);
+color:white;
+padding:30px 0;
+box-shadow:5px 0 20px rgba(0,0,0,.15);
+z-index:1000;
+}
+
+.logo{
+text-align:center;
+font-size:28px;
+font-weight:700;
+margin-bottom:35px;
+}
+
+.sidebar a{
+display:block;
+padding:16px 30px;
+color:white;
+text-decoration:none;
+font-weight:500;
+transition:.3s;
+}
+
+.sidebar a:hover{
+background:rgba(255,255,255,.12);
+padding-left:40px;
+}
+
+.main{
+margin-left:260px;
+padding:35px;
+}
+
+/* Header */
+
+.topbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:30px;
+}
+
+.topbar h2{
+font-weight:700;
+}
+
+.user-box{
+background:white;
+padding:12px 25px;
+border-radius:40px;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+/* Hero */
+
+.hero{
+background:linear-gradient(135deg,#198754,#20c997);
+color:white;
+border-radius:25px;
+padding:40px;
+margin-bottom:35px;
+box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
+
+.hero h1{
+font-weight:700;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:18px;
+opacity:.95;
+}
+
+/* Cards */
+
+.summary-card{
+background:white;
+border-radius:20px;
+padding:25px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.3s;
+height:100%;
+}
+
+.summary-card:hover{
+transform:translateY(-6px);
+}
+
+.summary-icon{
+font-size:45px;
+color:#198754;
+margin-bottom:15px;
+}
+
+.summary-card h5{
+font-weight:600;
+}
+
+.summary-card p{
+color:#666;
+margin-bottom:0;
+}
+
+.section-title{
+margin:45px 0 25px;
+font-weight:700;
+}
+
+</style>
+
+</head>
+
+<body>
+    
+
+<div class="sidebar">
+
+<div class="logo">
+🌱 KrishiMitra AI
+</div>
+
+<a href="/dashboard"><i class="fa fa-home me-2"></i>Dashboard</a>
+
+<a href="/chatbot"><i class="fa fa-robot me-2"></i>AI Chatbot</a>
+
+<a href="/weather"><i class="fa fa-cloud-sun me-2"></i>Weather</a>
+
+<a href="/market"><i class="fa fa-chart-line me-2"></i>Market Prices</a>
+
+<a href="/recommendation"><i class="fa fa-seedling me-2"></i>Crop Recommendation</a>
+
+<a href="/fertilizer"><i class="fa fa-flask me-2"></i>Fertilizer</a>
+
+<a href="/schemes"><i class="fa fa-landmark me-2"></i>Schemes</a>
+
+<a href="/crop_calendar"><i class="fa fa-calendar me-2"></i>Crop Calendar</a>
+
+<a href="/voice"><i class="fa fa-microphone me-2"></i>Voice Assistant</a>
+
+<a href="/disease"><i class="fa fa-leaf me-2"></i>Disease Detection</a>
+
+<a href="/logout"><i class="fa fa-right-from-bracket me-2"></i>Logout</a>
+
+</div>
+
+<div class="main">
+
+<div class="topbar">
+
+<div>
+
+<h2>Welcome, {{ user_name }} 👋</h2>
+
+<p class="text-muted">
+Smart Farming Starts Here
+</p>
+
+</div>
+
+<div class="user-box">
+
+<i class="fa fa-user-circle"></i>
+
+Farmer Dashboard
+
+</div>
+
+</div>
+
+<div class="hero">
+
+<h1>🌾 AI Powered Agriculture Assistant</h1>
+
+<p>
+
+Access weather forecasts, crop recommendations, fertilizer advice,
+government schemes, market prices, disease detection and multilingual
+voice assistance — all in one place.
+
+</p>
+
+</div>
+
+<div class="row g-4">
+
+<div class="col-lg-3 col-md-6">
+
+<div class="summary-card">
+
+<div class="summary-icon">
+<i class="fa-solid fa-cloud-sun"></i>
+</div>
+
+<h5>Weather</h5>
+
+<p>Real-time forecast and farming advice.</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="summary-card">
+
+<div class="summary-icon">
+<i class="fa-solid fa-chart-line"></i>
+</div>
+
+<h5>Market Prices</h5>
+
+<p>Live mandi prices with AI insights.</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="summary-card">
+
+<div class="summary-icon">
+<i class="fa-solid fa-seedling"></i>
+</div>
+
+<h5>Crop Recommendation</h5>
+
+<p>AI-powered crop suggestions.</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="summary-card">
+
+<div class="summary-icon">
+<i class="fa-solid fa-flask"></i>
+</div>
+
+<h5>Fertilizer</h5>
+
+<p>Smart fertilizer recommendations.</p>
+
+</div>
+
+</div>
+
+</div>
+
+<h3 class="section-title">🚀 AI Modules</h3>
+<div class="row g-4">
+
+    <!-- AI Chatbot -->
+    <div class="col-lg-4 col-md-6">
+
+        <div class="summary-card text-center">
+
+            <div class="summary-icon">
+                <i class="fa-solid fa-robot"></i>
+            </div>
+
+            <h5>AI Chatbot</h5>
+
+            <p>
+                Ask any agriculture-related question and receive instant AI-powered guidance.
+            </p>
+
+            <a href="/chatbot" class="btn btn-success mt-3 w-100">
+                Open Chatbot
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- Disease Detection -->
+    <div class="col-lg-4 col-md-6">
+
+        <div class="summary-card text-center">
+
+            <div class="summary-icon">
+                <i class="fa-solid fa-leaf"></i>
+            </div>
+
+            <h5>Disease Detection</h5>
+
+            <p>
+                Upload a crop image and let AI detect diseases with treatment suggestions.
+            </p>
+
+            <a href="/disease" class="btn btn-success mt-3 w-100">
+                Detect Disease
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- Weather -->
+   <div class="col-lg-3 col-md-6">
+
+    <div class="summary-card text-center">
+
+        <div class="summary-icon">
+            <i class="fa-solid fa-cloud-sun"></i>
+        </div>
+
+        <h5>Weather Forecast</h5>
+
+        <h2 class="text-success fw-bold">
+            {{ dashboard.weather.temperature }}°C
+        </h2>
+
+        <h6 class="mb-3">
+            {{ dashboard.weather.condition }}
+        </h6>
+
+        <p>
+            View live weather forecasts and receive AI-based farming recommendations.
+        </p>
+
+        <a href="/weather" class="btn btn-success mt-2 w-100">
+            Check Weather
+        </a>
+
+    </div>
+
+</div>
+
+    <!-- Crop Recommendation -->
+    <div class="col-lg-3 col-md-6">
+
+    <div class="summary-card text-center">
+
+        <div class="summary-icon">
+            <i class="fa-solid fa-seedling"></i>
+        </div>
+
+        <h5>Crop Recommendation</h5>
+
+        <h2 class="text-success fw-bold">
+            {{ dashboard.recommended_crop }}
+        </h2>
+
+        <h6>
+            Best Suggested Crop
+        </h6>
+
+        <p>
+            AI-powered crop recommendation based on Indian farming conditions.
+        </p>
+
+        <a href="/recommendation" class="btn btn-success mt-2 w-100">
+            Recommend Crop
+        </a>
+
+    </div>
+
+</div>
+
+    <!-- Market Prices -->
+   <div class="col-lg-3 col-md-6">
+
+    <div class="summary-card text-center">
+
+        <div class="summary-icon">
+            <i class="fa-solid fa-chart-line"></i>
+        </div>
+
+        <h5>Market Prices</h5>
+
+        <h2 class="text-success fw-bold">
+            ₹{{ dashboard.market.modal_price }}
+        </h2>
+
+        <h6>
+            {{ dashboard.market.crop }}
+        </h6>
+
+        <small class="text-muted">
+            {{ dashboard.market.market }}
+        </small>
+
+        <p class="mt-3">
+            Today's live mandi prices with AI market insights.
+        </p>
+
+        <a href="/market" class="btn btn-success mt-2 w-100">
+            View Market
+        </a>
+
+    </div>
+
+</div>
+
+    <!-- Fertilizer -->
+    <div class="col-lg-3 col-md-6">
+
+    <div class="summary-card text-center">
+
+        <div class="summary-icon">
+            <i class="fa-solid fa-flask"></i>
+        </div>
+
+        <h5>Fertilizer</h5>
+
+        <h2 class="text-success fw-bold">
+            {{ dashboard.fertilizer }}
+        </h2>
+
+        <h6>
+            Recommended
+        </h6>
+
+        <p>
+            AI-powered fertilizer recommendation for healthy crop growth.
+        </p>
+
+        <a href="/fertilizer" class="btn btn-success mt-2 w-100">
+            Open Module
+        </a>
+
+    </div>
+
+</div>
+
+    <!-- Government Schemes -->
+    <div class="col-lg-4 col-md-6">
+
+        <div class="summary-card text-center">
+
+            <div class="summary-icon">
+                <i class="fa-solid fa-landmark"></i>
+            </div>
+
+            <h5>Government Schemes</h5>
+
+            <p>
+                Explore government schemes and subsidies available for farmers.
+            </p>
+
+            <a href="/schemes" class="btn btn-success mt-3 w-100">
+                View Schemes
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- Crop Calendar -->
+    <div class="col-lg-4 col-md-6">
+
+        <div class="summary-card text-center">
+
+            <div class="summary-icon">
+                <i class="fa-solid fa-calendar-days"></i>
+            </div>
+
+            <h5>Crop Calendar</h5>
+
+            <p>
+                Know the best sowing, irrigation and harvesting schedule.
+            </p>
+
+            <a href="/crop_calendar" class="btn btn-success mt-3 w-100">
+                Open Calendar
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- Voice Assistant -->
+    <div class="col-lg-4 col-md-6">
+
+        <div class="summary-card text-center">
+
+            <div class="summary-icon">
+                <i class="fa-solid fa-microphone-lines"></i>
+            </div>
+
+            <h5>Voice Assistant</h5>
+
+            <p>
+                Talk to KrishiMitra AI in English, Hindi or Marathi using your voice.
+            </p>
+
+            <a href="/voice" class="btn btn-success mt-3 w-100">
+                Start Talking
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<h3 class="section-title mt-5">
+    ⚡ Quick Actions
+</h3>
+<div class="row g-4">
+
+    <div class="col-lg-2 col-md-4 col-6">
+        <a href="/chatbot" class="btn btn-success btn-lg w-100 py-4">
+            🤖<br>AI Chat
+        </a>
+    </div>
+
+    <div class="col-lg-2 col-md-4 col-6">
+        <a href="/weather" class="btn btn-primary btn-lg w-100 py-4">
+            🌤<br>Weather
+        </a>
+    </div>
+
+    <div class="col-lg-2 col-md-4 col-6">
+        <a href="/market" class="btn btn-warning btn-lg w-100 py-4 text-dark">
+            💹<br>Market
+        </a>
+    </div>
+
+    <div class="col-lg-2 col-md-4 col-6">
+        <a href="/voice" class="btn btn-danger btn-lg w-100 py-4">
+            🎤<br>Voice AI
+        </a>
+    </div>
+
+    <div class="col-lg-2 col-md-4 col-6">
+        <a href="/disease" class="btn btn-info btn-lg w-100 py-4 text-white">
+            🌿<br>Disease
+        </a>
+    </div>
+
+    <div class="col-lg-2 col-md-4 col-6">
+        <a href="/schemes" class="btn btn-secondary btn-lg w-100 py-4">
+            🏛<br>Schemes
+        </a>
+    </div>
+
+</div>
+
+<!-- Agriculture Tips -->
+
+<div class="card mt-5 border-0 shadow-lg rounded-4">
+
+    <div class="card-body p-4">
+
+        <h3 class="mb-4">
+            🌱 Daily Smart Farming Tips
+        </h3>
+
+        <div class="row">
+
+            <div class="col-md-4">
+
+                <div class="alert alert-success">
+
+                    💧 Irrigate crops only after checking soil moisture to avoid water wastage.
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="alert alert-warning">
+
+                    🌾 Monitor crops regularly for early signs of pests and diseases.
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="alert alert-info">
+
+                    🌤 Always check today's weather forecast before spraying pesticides.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Footer -->
+
+<footer class="mt-5 text-center">
+
+    <hr>
+
+    <h5 class="fw-bold text-success">
+
+        🌾 KrishiMitra AI
+
+    </h5>
+
+    <p class="text-muted">
+
+        Empowering Farmers with Artificial Intelligence
+
+    </p>
+
+    <p class="text-muted">
+
+        Weather • Crop Recommendation • Disease Detection • Market Prices • Fertilizer • Government Schemes • Voice Assistant
+
+    </p>
+
+    <small class="text-secondary">
+
+        © 2026 KrishiMitra AI | Built for Smart Agriculture 🌱
+
+    </small>
+
+</footer>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
