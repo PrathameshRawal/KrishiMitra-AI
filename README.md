@@ -127,17 +127,27 @@ http://127.0.0.1:5000
 
 ## 📸 Screenshots
 
-Add screenshots here:
+<h2>📸 Project Screenshots</h2>
 
-- Home Page
-- Dashboard
-- AI Chatbot
-- Weather
-- Crop Recommendation
-- Disease Detection
-- Market Prices
-- Government Schemes
-- Voice Assistant
+<p align="center">
+<img src="screenshots/home.png" width="45%">
+<img src="screenshots/dashboard.png" width="45%">
+</p>
+
+<p align="center">
+<img src="screenshots/crop_recommendation.png" width="45%">
+<img src="screenshots/weather.png" width="45%">
+</p>
+
+<p align="center">
+<img src="screenshots/market.png" width="45%">
+<img src="screenshots/disease_detection.png" width="45%">
+</p>
+
+<p align="center">
+<img src="screenshots/chatbot.png" width="45%">
+<img src="screenshots/schemes.png" width="45%">
+</p>
 
 ---
 
