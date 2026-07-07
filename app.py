@@ -1,4 +1,10 @@
 from flask import Flask, render_template, session, redirect, url_for
+import os
+import subprocess
+
+# Create database automatically on first start
+if not os.path.exists("database/krishmitra.db"):
+    subprocess.run(["python", "init_db.py"])
 
 # Blueprints
 
@@ -17,6 +23,9 @@ from routes.voice import voice_bp
 # -------------------------
 # Flask App
 # -------------------------
+# Create database automatically on first start
+if not os.path.exists("database/krishmitra.db"):
+    subprocess.run(["python", "init_db.py"])
 
 app = Flask(__name__)
 
@@ -112,5 +121,10 @@ def page_not_found(error):
     return render_template("404.html"), 404
 
 
+import os
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(
+        host="0.0.0.0",
+        port=int(os.environ.get("PORT", 5000))
+    )
